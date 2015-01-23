@@ -1,0 +1,51 @@
+# Cisco Nexus
+
+OpenNMS configuration module for Cisco Nexus device series.
+
+Supported devices:
+
+- Cisco Nexus 1000v
+- Cisco Nexus 1010
+- Cisco Nexus 3064-T
+- Cisco Nexus 5020
+- Cisco Nexus 5548
+- Cisco Nexus 7004
+- Cisco Nexus 7009
+- Cisco Nexus 7010
+- Cisco Nexus 7018
+
+## Installation
+
+.Download and install from GitHub
+[source, bash]
+----
+cd $OPENNMS_HOME/etc/modules-available
+git clone https://github.com/opennms-config-modules/cisco-nexus.git
+----
+
+### Datacollection
+
+.Install datacollection configuration
+[source, bash]
+----
+cd $OPENNMS_HOME/etc/datacollection
+ln -s ../modules-available/cisco-nexus/datacollection/*.xml .
+----
+
+.Include in datacollection-config.xml
+[source, xml]
+----
+<include-collection dataCollectionGroup="SNMP-MIB2-Host-Resources"/>
+<include-collection dataCollectionGroup="SNMP-MIB2-Network-Interfaces"/>
+<include-collection dataCollectionGroup="SNMP-MIB2-Protocols"/>
+<include-collection dataCollectionGroup="SNMP-MIB2-UPS"/>
+----
+
+### Graph report definitions
+
+.Install graph report definitions
+[source, bash]
+----
+cd $OPENNMS_HOME/etc/snmp-graph.properties.d
+ln -s ../modules-available/cisco-nexus/graphs/*.properties .
+----
