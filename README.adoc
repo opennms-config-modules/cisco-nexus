@@ -35,10 +35,7 @@ ln -s ../modules-available/cisco-nexus/datacollection/*.xml .
 .Include in datacollection-config.xml
 [source, xml]
 ----
-<include-collection dataCollectionGroup="SNMP-MIB2-Host-Resources"/>
-<include-collection dataCollectionGroup="SNMP-MIB2-Network-Interfaces"/>
-<include-collection dataCollectionGroup="SNMP-MIB2-Protocols"/>
-<include-collection dataCollectionGroup="SNMP-MIB2-UPS"/>
+<include-collection dataCollectionGroup="Cisco-Nexus"/>
 ----
 
 ### Graph report definitions
