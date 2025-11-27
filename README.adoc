@@ -1,18 +1,6 @@
-= Cisco Nexus
+= Clavister
 
-OpenNMS configuration module for Cisco Nexus device series.
-
-Supported devices:
-
-- Cisco Nexus 1000v
-- Cisco Nexus 1010
-- Cisco Nexus 3064-T
-- Cisco Nexus 5020
-- Cisco Nexus 5548
-- Cisco Nexus 7004
-- Cisco Nexus 7009
-- Cisco Nexus 7010
-- Cisco Nexus 7018
+OpenNMS configuration module for Clavister device series.
 
 == Installation
 
@@ -21,7 +9,7 @@ Supported devices:
 ----
 mkdir ${HOME}/opennms-config-workspace
 cd ${HOME}/opennms-config-workspace
-git clone https://github.com/opennms-config-modules/cisco-nexus.git
+git clone https://github.com/opennms-config-modules/clavister.git
 ----
 
 === Data Collection
@@ -29,7 +17,8 @@ git clone https://github.com/opennms-config-modules/cisco-nexus.git
 .Install datacollection configuration
 [source, bash]
 ----
-cp ${HOME}/opennms-config-workspace/cisco-nexus/datacollection/*.xml ${OPENNMS_HOME}/etc/datacollection
+cp ${HOME}/opennms-config-workspace/clavister/datacollection/*.xml ${OPENNMS_HOME}/etc/datacollection
+cp ${HOME}/opennms-config-workspace/clavister/resource-types.d/clavister-datacollection.xml ${OPENNMS_HOME}/etc/resource-types.d
 ----
 
 .Include in datacollection-config.xml
@@ -43,5 +32,5 @@ cp ${HOME}/opennms-config-workspace/cisco-nexus/datacollection/*.xml ${OPENNMS_H
 .Install graph report definitions
 [source, bash]
 ----
-cp ${HOME}/opennms-config-workspace/cisco-nexus/graphs/*.properties ${OPENNMS_HOME}/etc/snmp-graph.properties.d
+cp ${HOME}/opennms-config-workspace/clavister/graphs/*.properties ${OPENNMS_HOME}/etc/snmp-graph.properties.d
 ----

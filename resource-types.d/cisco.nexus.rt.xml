@@ -1,0 +1,16 @@
+<resource-types>
+    <resourceType name="ciscoNXEnvMonStatusIndex" label="Cisco Nexus Environmental"
+                  resourceLabel="${entPhysicalName} (index ${index})">
+        <persistenceSelectorStrategy class="org.opennms.netmgt.collectd.PersistRegexSelectorStrategy">
+            <parameter key="match-expression" value="(#entPhysicalName != null) and (#entSensorType != null)"/>
+        </persistenceSelectorStrategy>
+        <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+    </resourceType>
+    <resourceType name="ciscoNXProcessIndex" label="Cisco Nexus System Resourses"
+                  resourceLabel="${entPhysicalName} (index ${index})">
+        <persistenceSelectorStrategy class="org.opennms.netmgt.collectd.PersistRegexSelectorStrategy">
+            <parameter key="match-expression" value="(#cpmCPUTotalPhysicalIndex != null)"/>
+        </persistenceSelectorStrategy>
+        <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+    </resourceType>
+</resource-types>
